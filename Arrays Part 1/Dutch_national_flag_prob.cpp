@@ -4,19 +4,23 @@ using namespace std;
 
 void sort(vector<int> &nums){
     int n = nums.size();
-    int low=0,mid=0,higth=n-1;
-    while(mid<=higth){
+    int low = 0;
+    int mid = 0;
+    int hight = n-1;
+
+    while(mid<=hight){
         if(nums[mid]==0){
-            swap(nums[mid],nums[low]);
-            low++;
-            mid++;
+            swap(nums[low],nums[mid]);
+            low ++;
+            mid ++;
         }
         else if(nums[mid]==1){
             mid++;
         }
         else{
-            swap(nums[mid],nums[higth]);
-            higth --;
+            // when nums[mid]==2
+            swap(nums[mid],nums[hight]);
+            hight --;
         }
     }
 }
