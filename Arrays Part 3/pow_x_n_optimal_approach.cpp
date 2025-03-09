@@ -6,7 +6,7 @@ double Pow(int x,int n){
     if(n==0){
         return 1;
     }
-    int nn = n;
+    long long int nn = n; //edge case when -n is too small
     if(n<0){
         nn *= -1;
     }
@@ -22,7 +22,7 @@ double Pow(int x,int n){
         }
     }
     if(n<0){
-        ans = 1/(long)ans;
+        ans = (double)(1.0)/(double)ans; // when x is float
     }
     return ans;
 }
