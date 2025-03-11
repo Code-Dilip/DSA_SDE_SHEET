@@ -13,7 +13,7 @@ int count_possible_paths(int i, int j, int n, int m){
 }
 
 int main(){
-    int n = 2;
+    int n = 7;
     int m = 3;
     cout<<count_possible_paths(0,0,n,m)<<endl;
     return 0;
