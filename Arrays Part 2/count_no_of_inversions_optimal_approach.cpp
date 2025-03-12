@@ -5,7 +5,7 @@ using namespace std;
 int merge(vector <int> &arr,int low,int mid,int high){
     vector<int> temp;
     int left = low;
-    int right = mid+1;
+    int right = mid+1; 
     
     int temp_cnt = 0;
 
