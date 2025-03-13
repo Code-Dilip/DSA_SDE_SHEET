@@ -13,7 +13,6 @@ vector <vector<int>> three_sum(vector <int> nums, int target){
         if(i>0 && nums[i]==nums[i-1]){
             continue;
         }
-        set <int> hash_set;
         int j = i+1;
         int k = n-1;
         while (j<k)
@@ -33,11 +32,11 @@ vector <vector<int>> three_sum(vector <int> nums, int target){
                 k --;
                 while (j<k && nums[j]==nums[j-1])
                 {
-                    continue;
+                    j ++;
                 }
                 while (j<k && nums[k]==nums[k+1])
                 {
-                    continue;
+                    k --;
                 }
             }
         }
