@@ -34,5 +34,4 @@ int main(){
     vector <int> nums = {15, -2, 2, -8, 1, 7, 10, 23};
     cout<<longest_subarray_with_sum_k(nums,0)<<endl;
     return 0;
-    return 0;
 }
