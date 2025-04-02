@@ -1,28 +1,30 @@
 #include<iostream>
-#include<vector>
+#include<string>
 #include<map>
 using namespace std;
 
-int count_subarray_with_xorsum_k(vector <int> nums, int k){
-    int n = nums.size();
-    if(n==0) return n;
-    int cnt = 0;
-    int xor_sum = 0;
-    map <int,int> mp;
-    mp[xor_sum] ++;
+int longest_substring(string str){
+    int n = str.length();
+    int max_len = 0;
 
     for(int i=0;i<n;i++){
-        xor_sum ^= nums[i];
-        int x = xor_sum ^ k;
-        cnt += mp[x];
-        mp[xor_sum] ++;
+        int hash_arr[256] = {0};
+        int len = 0;
+        for(int j=i;j<n;j++){
+            if(hash_arr[str[j]]==1){
+                break;
+            }
+            hash_arr[str[j]] = 1;
+            len = j-i+1;
+            max_len = max(max_len,len);
+        }
     }
 
-    return cnt;
+    return max_len;
 }
 
 int main(){
-    vector <int> nums = {5, 6, 7, 8, 9};
-    cout<<count_subarray_with_xorsum_k(nums,5)<<endl;
+    string str = "pwwkew";
+    cout<<longest_substring(str)<<endl;
     return 0;
 }
