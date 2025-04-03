@@ -75,7 +75,7 @@ int main(){
 
     insertAtEnd(head,4);
     insertAtEnd(head,5);
-    //insertAtEnd(head,6);
+    insertAtEnd(head,6);
     printList(head);
 
     reverseList(head);
