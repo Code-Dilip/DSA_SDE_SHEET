@@ -53,14 +53,10 @@ node *detect_starting_point_of_cycle(node *head1){
         slow = slow->next;
         if(fast==slow){
             slow = head1;
-            break;
-        }
-    }
-    while (slow!=fast)
-    {
-        slow = slow->next;
-        fast = fast->next;
-        if(slow==fast){
+            while(slow!=fast){
+                slow = slow->next;
+                fast = fast->next;
+            }
             return slow;
         }
     }
