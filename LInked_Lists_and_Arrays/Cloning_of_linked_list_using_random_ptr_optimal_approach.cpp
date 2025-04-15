@@ -121,10 +121,6 @@ int main(){
     print_next_random_node(((((cloned_head->next)->next)->next)->next)->rand);
     cout<<endl;
     
-
-    //insert_clone_nodes_in_between(head);
-    //printList(head);
-    
     return 0;
 }
 
