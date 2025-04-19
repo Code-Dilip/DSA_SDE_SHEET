@@ -42,32 +42,35 @@ void printList(node *head){
     cout<<"NULL"<<endl;
 }
 
-void rotateList(node *&head, int k){
-    int n = 0;
-    node *temp = head;
-    while(temp!=nullptr){
-        n ++;
-        temp = temp->next;
+node *get_Kth_node(node *head, int k){
+    int cnt = 1;
+    while(cnt!=k && head!=nullptr){
+        head = head->next;
+        cnt ++;
     }
-    
-    temp = head;
-    if(k%n==0){
+    return head;
+}
+
+void rotateList(node *&head, int k){
+    if(head==nullptr || k==0){
         return ;
     }
-    k = k%n;
-    while(k>=0 && temp!=nullptr){
-        k --;
-        temp = temp->next;
-    }
-
-    node *tail = temp;
+    int len = 1;
+    node *tail = head;
     while(tail->next!=nullptr){
+        len ++;
         tail = tail->next;
     }
+
+    if(k%len==0){
+        return ;
+    }
+    k = k%len;
+    node *newLastNode = get_Kth_node(head, len-k);
+
     tail->next = head;
-    
-    head = temp->next;
-    temp->next = nullptr;
+    head = newLastNode->next;
+    newLastNode->next = nullptr;
 }
 
 int main(){
@@ -82,6 +85,12 @@ int main(){
 
     printList(head);
     rotateList(head, 3);
+    printList(head);
+
+    rotateList(head, 6);
+    printList(head);
+
+    rotateList(head, 7);
     printList(head);
     return 0;
 }
