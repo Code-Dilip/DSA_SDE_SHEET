@@ -32,7 +32,7 @@ int min_no_of_platforms(vector <float> arrival, vector <float> departure){
 }
 
 int main(){
-    
+    condition
     vector <float> arrival = {9.00, 9.45, 9.55, 11.00, 15.00, 18.00};
     vector <float> departure = {9.20, 12.00, 11.30, 11.50, 19.00, 20.00};
 
